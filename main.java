@@ -1,4 +1,3 @@
-import java.lang.management.BufferPoolMXBean;
 import java.util.Scanner;
 
 public class main {
@@ -23,10 +22,24 @@ public class main {
                 }
             }else{
                 System.out.println("You find a deserted car? do you drive it or not");
+                if(choosechoice()){
+                    System.out.println("Do you have a license? yes or no");
+                    if(choosechoice()){
+                        System.out.println("You get to drive Redwood safely");
+                    }
+                    else{
+                        System.out.println("You get pulled over by a cop and get sentenced to jail, at least you got a roof over your head!");
+                    }
+                }else{
+                    System.out.println("You call for help");
+                }
             }
         } 
         else {
            System.out.println("You feel compelled to explore the Tam further, intrigued by its secrets.");
+           if(choosechoice()){
+            System.out.println("You see a pool or you search the campus");
+           }
         }
         scanner.close();
     }
@@ -35,7 +48,7 @@ public class main {
 
     public static boolean choosechoice(){
         Scanner scanner = new Scanner(System.in);
-       String input = scanner.nextLine().trim().toLowerCase();
+        String input = scanner.nextLine().trim().toLowerCase();
         return input.equals("yes");
         
     }
